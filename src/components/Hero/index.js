@@ -1,25 +1,20 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  Redirect,
-} from "react-router-dom";
-import {
-  HeroContainer,
-  HeroContent,
-  HeroItems,
-  HeroH1,
-  HeroP,
   HeroBtn,
   HeroBtn2,
   HeroBtn3,
   HeroBtn4,
-  StillScrolling,
+  HeroContainer,
+  HeroContent,
+  HeroH1,
+  HeroItems,
+  HeroP,
+  StillScrolling
 } from "./HeroElements";
-import Navbar from "../Navbar";
 
 const Hero = ({ radarData, radarOptions }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,14 +48,14 @@ const Hero = ({ radarData, radarOptions }) => {
           <HeroItems>
             <HeroH1>Your heart just found another way to be broken</HeroH1>
             <HeroP>Have you seen a doctor recently?</HeroP>
-            <Link to="/fortunes">
+            <Link to="/fortunes/1">
               <HeroBtn>Start here</HeroBtn>
             </Link>
           </HeroItems>
           <HeroItems>
             <HeroH1>Planning your next step and how to ditch it </HeroH1>
             <HeroP>When and why</HeroP>
-            <Link to="/fortunes">
+            <Link to="/fortunes/2">
               <HeroBtn2 onClick={handlePathBtn2}>Start here</HeroBtn2>
             </Link>
           </HeroItems>
@@ -70,21 +65,21 @@ const Hero = ({ radarData, radarOptions }) => {
               A healthy constellation among those who've decided children are
               the future
             </HeroP>
-            <Link to="/fortunes">
+            <Link to="/fortunes/3">
               <HeroBtn onClick={handlePathBtn}>Start here</HeroBtn>
             </Link>
           </HeroItems>
           <HeroItems>
             <HeroH1>The new environment</HeroH1>
             <HeroP>Roadmaps burned, hills crossed....</HeroP>
-            <Link to="/fortunes">
+            <Link to="/fortunes/4">
               <HeroBtn3 onClick={handlePathBtn3}>Start here</HeroBtn3>
             </Link>
           </HeroItems>
           <HeroItems>
             <HeroH1>No rest</HeroH1>
             <HeroP>No rest</HeroP>
-            <Link to="/fortunes">
+            <Link to="/fortunes/5">
               <HeroBtn4 onClick={handlePathBtn4}>Start here</HeroBtn4>
             </Link>
           </HeroItems>
