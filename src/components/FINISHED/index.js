@@ -14,7 +14,7 @@ const EndofLine = ({ radarData, radarOptions }) => {
 
   return (
     <StillScrolling1>
-      <EndofLove />
+      <EndofLove value={20} />
       <EndofWORK />
       <EndofFAMILY />
       <EndofHealth />

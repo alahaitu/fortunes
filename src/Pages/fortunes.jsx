@@ -5,11 +5,15 @@ import { GlobalStyle } from "../globalStyles";
 
 // PAGES <Helling radarData={radarData} radarOptions={radarOptions}/>
 
-const FortunePage = ({ radarData, radarOptions }) => {
+const FortunePage = ({ radarData, radarOptions, progress }) => {
   return (
     <>
       <GlobalStyle />
-      <Hellings radarData={radarData} radarOptions={radarOptions} />
+      <Hellings
+        radarData={radarData}
+        radarOptions={radarOptions}
+        progress={progress}
+      />
     </>
   );
 };

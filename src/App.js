@@ -18,39 +18,50 @@ function App() {
   ]);
   const [allFinished, setAllFinished] = useState(false);
   const [progress, setProgress] = useState(0);
+  const labels = ["Health", "Wealth", "Family", "Love", "Fucks given"];
 
   useEffect(() => {
     const finishedCount = questionnairesFinished.filter(Boolean).length;
     const percentage = (finishedCount / questionnairesFinished.length) * 100;
     setProgress(percentage);
-
-    if (
-      questionnairesFinished[1] &&
-      questionnairesFinished[2] &&
-      questionnairesFinished[3] &&
-      questionnairesFinished[4] &&
-      questionnairesFinished[5]
-    ) {
-      setAllFinished(true);
-    }
   }, [questionnairesFinished]);
 
+  useEffect(() => {
+    if (progress >= 100) {
+      setAllFinished(true);
+    }
+  }, [progress]);
+
+  const [dataset1, setDataset1] = useState({
+    label: "q1",
+    data: [0, 0, 0, 0, 0],
+    backgroundColor: "yellow",
+  });
+  const [dataset2, setDataset2] = useState({
+    label: "q2",
+    data: [0, 0, 0, 0, 0],
+    backgroundColor: "red",
+  });
+  const [dataset3, setDataset3] = useState({
+    label: "q3",
+    data: [0, 0, 0, 0, 0],
+    backgroundColor: "chucknorris",
+  });
+  const [dataset4, setDataset4] = useState({
+    label: "q4",
+    data: [0, 0, 0, 0, 0],
+    backgroundColor: "green",
+  });
+  const [dataset5, setDataset5] = useState({
+    label: "q5",
+    data: [0, 0, 0, 0, 0],
+    backgroundColor: "brown",
+  });
+
   // data passed to radar chart
-  const [radarData, setRadarData] = useState({
-    labels: ["Health", "Wealth", "Family", "Love", "Fucks given"],
-    datasets: [
-      // this is the "target" data that always stays the same
-      {
-        label: "Unclear",
-        data: [22, 42, 49, 19, 3],
-      },
-      // this is the data that changes when users answers questions
-      {
-        borderColor: "yellow",
-        label: "userdata",
-        data: [0, 0, 0, 0, 0],
-      },
-    ],
+  const [radarData] = useState({
+    labels,
+    datasets: [dataset1, dataset2, dataset3, dataset4, dataset5],
   });
 
   const radarOptions = {
@@ -93,17 +104,25 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <StartPage radarData={radarData} radarOptions={radarOptions} />
+              <StartPage
+                radarData={radarData}
+                radarOptions={radarOptions}
+                progress={progress}
+              />
             </Route>
             <Route exact path="/fortunes">
-              <FortunePage radarData={radarData} radarOptions={radarOptions} />
+              <FortunePage
+                radarData={radarData}
+                radarOptions={radarOptions}
+                progress={progress}
+              />
             </Route>
             <Route exact path="/fortunes/1">
               <Questionnaire
                 id={1}
                 questions={questions1}
-                setRadarData={setRadarData}
-                radarData={radarData}
+                setRadarData={setDataset1}
+                radarData={dataset1}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[0]}
@@ -114,8 +133,8 @@ function App() {
               <Questionnaire
                 id={2}
                 questions={questions2}
-                radarData={radarData}
-                setRadarData={setRadarData}
+                radarData={dataset2}
+                setRadarData={setDataset2}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[1]}
@@ -126,8 +145,8 @@ function App() {
               <Questionnaire
                 id={3}
                 questions={questions3}
-                radarData={radarData}
-                setRadarData={setRadarData}
+                radarData={dataset3}
+                setRadarData={setDataset3}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[2]}
@@ -138,8 +157,8 @@ function App() {
               <Questionnaire
                 id={4}
                 questions={questions4}
-                radarData={radarData}
-                setRadarData={setRadarData}
+                radarData={dataset4}
+                setRadarData={setDataset4}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[3]}
@@ -150,8 +169,8 @@ function App() {
               <Questionnaire
                 id={5}
                 questions={questions5}
-                radarData={radarData}
-                setRadarData={setRadarData}
+                radarData={dataset5}
+                setRadarData={setDataset5}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[4]}

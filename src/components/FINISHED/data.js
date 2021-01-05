@@ -1,3 +1,52 @@
+export const getAnswers = (value, answers) => {
+  let answer;
+
+  if (value < 30) {
+    answer = answers[0];
+  } else if (value > 60) {
+    answer = answers[1];
+  } else {
+    answer = answers[2];
+  }
+  return answer;
+};
+
+export const healthAnswers = [
+  { title: "title1", text: "text1" },
+  { title: "title2", text: "text2" },
+  { title: "title3", text: "text3" },
+];
+
+export const wealthAnswers = [
+  { title: "title1", text: "text1" },
+  { title: "title2", text: "text2" },
+  { title: "title3", text: "text3" },
+];
+
+export const familyAnswers = [
+  { title: "title1", text: "text1" },
+  { title: "title2", text: "text2" },
+  { title: "title3", text: "text3" },
+];
+
+export const loveAnswers = [
+  {
+    title: "Unclear",
+    text: "You are the true master with tactics that leads in Panic",
+  },
+  {
+    title: "Off with balance",
+    text: "You are the true master with tactics that leads in Panic",
+  },
+  { title: "title3", text: "text3" },
+];
+
+export const fucksGivenAnswers = [
+  { title: "title1", text: "text1" },
+  { title: "title2", text: "text2" },
+  { title: "title3", text: "text3" },
+];
+
 /* const LovingAnswers = (props) => {
     
 //make a state that if this questionnaire is finished it enables the related answersheet

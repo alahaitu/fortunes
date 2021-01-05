@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Radar } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 
 import { HeroBtn, HeroContainer, HeroContent, HeroItems, HeroP } from "../Hero/HeroElements";
@@ -22,15 +21,18 @@ const Questionnaire = ({
     setIsOpen(!isOpen);
   };
 
+  const labels = ["Health", "Wealth", "Family", "Love", "Fucks given"];
+  const data = { labels, datasets: [radarData] };
+  const [progress, setProgress] = useState(0);
+
   // run when the user presses submit button
   const handleChange = (event) => {
     setCount(count + 1);
-    const sum = radarData.datasets[1].data.map(
-      (value, i) => value + event.value[i]
-    );
+    const sum = radarData.data.map((value, i) => value + event.value[i]);
     const dataCopy = Object.assign({}, radarData);
-    dataCopy.datasets[1].data = sum;
+    dataCopy.data = sum;
     setRadarData(dataCopy);
+    setProgress((count + 1 / questions.length) * 100);
 
     if (count === questions.length - 1) {
       handleQuestionnaireFinished(id);
@@ -54,8 +56,6 @@ const Questionnaire = ({
   const end = (
     <>
       <div style={{ padding: 20 }}>Finished</div>
-      <Radar data={radarData} options={radarOptions} />
-
       <Link to={allFinished ? "/fortunes" : "/"}>
         <HeroBtn>Go back</HeroBtn>
       </Link>
@@ -68,8 +68,9 @@ const Questionnaire = ({
         <Sidebar
           isOpen={isOpen}
           toggle={toggle}
-          radarData={radarData}
+          radarData={data}
           radarOptions={radarOptions}
+          progress={progress}
         />
         <HeroContent>
           <HeroItems>

@@ -5,11 +5,15 @@ import { GlobalStyle } from "../globalStyles";
 
 // PAGES
 
-const StartPage = ({ radarData, radarOptions }) => {
+const StartPage = ({ radarData, radarOptions, progress }) => {
   return (
     <>
       <GlobalStyle />
-      <Hero radarData={radarData} radarOptions={radarOptions} />
+      <Hero
+        radarData={radarData}
+        radarOptions={radarOptions}
+        progress={progress}
+      />
     </>
   );
 };

@@ -2,9 +2,10 @@ import { Jello } from "animate-css-styled-components";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { getAnswers, loveAnswers } from "./data";
 import { FBtn, FContainer5, FContent, FH1, FItems, FP } from "./FinishedElements";
 
-const EndofLove = ({ radarData, radarOptions }) => {
+const EndofLove = ({ radarData, radarOptions, value }) => {
   return (
     <>
       <Jello duration="1.0s" delay="0.4s">
@@ -13,8 +14,8 @@ const EndofLove = ({ radarData, radarOptions }) => {
             <Jello duration="1.0s" delay="0.6s">
               <FItems>
                 <FH1 delay="1s">
-                  Here render Love data.title from data.js
-                  <FP>Here render Love data.text from data.js</FP>
+                  {getAnswers(value, loveAnswers).title}
+                  <FP>{getAnswers(value, loveAnswers).text}</FP>
                   <Link to="/fortunes">
                     <Jello duration="1.0s" delay="1s">
                       <FBtn>LOVE</FBtn>

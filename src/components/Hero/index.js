@@ -16,7 +16,7 @@ import {
   StillScrolling
 } from "./HeroElements";
 
-const Hero = ({ radarData, radarOptions }) => {
+const Hero = ({ radarData, radarOptions, progress }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -43,6 +43,7 @@ const Hero = ({ radarData, radarOptions }) => {
           toggle={toggle}
           radarData={radarData}
           radarOptions={radarOptions}
+          progress={progress}
         />
         <HeroContent>
           <HeroItems>

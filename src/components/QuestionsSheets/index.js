@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import { EndBtn } from "./TESTElements";
 
-const Hellings = ({ radarData, radarOptions }) => {
+const Hellings = ({ radarData, radarOptions, progress }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -24,6 +24,7 @@ const Hellings = ({ radarData, radarOptions }) => {
           toggle={toggle}
           radarData={radarData}
           radarOptions={radarOptions}
+          progress={progress}
         />
         <HeroContent>
           <HeroItems>

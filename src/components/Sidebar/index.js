@@ -4,7 +4,7 @@ import Chart from "../Fortunes";
 import { CloseIcon, Icon, SidebarContainer, SidebarLink, SidebarMenu, SidebarRoute, SideBtnWrap } from "./SidebarElements";
 
 //CHILD
-const Sidebar = ({ isOpen, toggle, radarData, radarOptions }) => {
+const Sidebar = ({ isOpen, toggle, radarData, radarOptions, progress }) => {
   return (
     <>
       <SidebarContainer isOpen={isOpen}>
@@ -17,9 +17,8 @@ const Sidebar = ({ isOpen, toggle, radarData, radarOptions }) => {
           <SidebarLink to="/">its too much of a blur</SidebarLink>
           <div>
             <label htmlFor="progress">Progress:</label>
-            <progress id="progress" value="32" max="100">
-              {" "}
-              32%{" "}
+            <progress id="progress" value={progress} max="100">
+              {progress}%
             </progress>
           </div>
           <Chart radarData={radarData} radarOptions={radarOptions} />
