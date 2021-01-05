@@ -1,5 +1,6 @@
-import styled, { css, keyframes } from "styled-components";
-import { Fades, Moonhover, BoXed, FadeIn, FadeBF } from "../styled";
+import styled from "styled-components";
+
+import { BoXed, Fades } from "../styled";
 
 export const HeroContainer = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
@@ -143,5 +144,5 @@ export const StillScrolling = styled.div`
   height: 100vh;
   background-position: center;
   background-size: cover;
-  height: 350vh;
+  height: 550vh;
 `;

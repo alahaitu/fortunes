@@ -5,7 +5,6 @@ import { CloseIcon, Icon, SidebarContainer, SidebarLink, SidebarMenu, SidebarRou
 
 //CHILD
 const Sidebar = ({ isOpen, toggle, radarData, radarOptions }) => {
-  console.log(radarData);
   return (
     <>
       <SidebarContainer isOpen={isOpen}>
@@ -17,7 +16,7 @@ const Sidebar = ({ isOpen, toggle, radarData, radarOptions }) => {
           <SidebarLink to="/">buhuuuuuuuuuuuuuu</SidebarLink>
           <SidebarLink to="/">its too much of a blur</SidebarLink>
           <div>
-            <label for="progress">Progress:</label>
+            <label htmlFor="progress">Progress:</label>
             <progress id="progress" value="32" max="100">
               {" "}
               32%{" "}

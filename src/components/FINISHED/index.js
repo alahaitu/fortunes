@@ -1,37 +1,10 @@
 import React, { useState } from "react";
-import { Wobble, RubberBand, Jello } from "animate-css-styled-components";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  Redirect,
-} from "react-router-dom";
 
-import {
-  StillScrolling1,
-  FContainerS,
-  FContainerS2,
-  FContainerS3,
-  FContainer,
-  FContainer1,
-  FContainer2,
-  FContainer3,
-  FContainer4,
-  FContainer5,
-  FContainer6,
-  FContainer7,
-  FContainer8,
-  FContent,
-  FItems,
-  FH1,
-  FP,
-  FBtn,
-} from "./FinishedElements";
 import EndofFAMILY from "./FamilyLife";
-import EndofWORK from "./WorkLife";
-import EndofLove from "./LoveLife";
+import { StillScrolling1 } from "./FinishedElements";
 import EndofHealth from "./HealthLife";
+import EndofLove from "./LoveLife";
+import EndofWORK from "./WorkLife";
 
 const EndofLine = ({ radarData, radarOptions }) => {
   const [isOpen, setIsOpen] = useState(false);

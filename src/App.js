@@ -9,6 +9,27 @@ import { questions1, questions2, questions3, questions4, questions5 } from "./qu
 
 // PAGES
 function App() {
+  const [questionnairesFinished, setQuestionnairesFinished] = useState({
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+  });
+  const [allFinished, setAllFinished] = useState(false);
+
+  useEffect(() => {
+    if (
+      questionnairesFinished[1] &&
+      questionnairesFinished[2] &&
+      questionnairesFinished[3] &&
+      questionnairesFinished[4] &&
+      questionnairesFinished[5]
+    ) {
+      setAllFinished(true);
+    }
+  }, [questionnairesFinished]);
+
   // data passed to radar chart
   const [radarData, setRadarData] = useState({
     labels: ["Health", "Wealth", "Family", "Love", "Fucks given"],
@@ -55,6 +76,13 @@ function App() {
     },
   };
 
+  const handleQuestionnaireFinished = (id) => {
+    const obj = {};
+    obj[id] = true;
+    setQuestionnairesFinished({ ...questionnairesFinished, ...obj });
+    console.log(obj);
+  };
+
   return (
     <>
       <section className="App">
@@ -68,38 +96,62 @@ function App() {
             </Route>
             <Route exact path="/fortunes/1">
               <Questionnaire
+                id={1}
                 questions={questions1}
                 setRadarData={setRadarData}
                 radarData={radarData}
                 radarOptions={radarOptions}
+                handleQuestionnaireFinished={handleQuestionnaireFinished}
+                finished={questionnairesFinished[1]}
+                allFinished={allFinished}
               />
             </Route>
             <Route exact path="/fortunes/2">
               <Questionnaire
+                id={2}
                 questions={questions2}
                 radarData={radarData}
+                setRadarData={setRadarData}
                 radarOptions={radarOptions}
+                handleQuestionnaireFinished={handleQuestionnaireFinished}
+                finished={questionnairesFinished[2]}
+                allFinished={allFinished}
               />
             </Route>
             <Route exact path="/fortunes/3">
               <Questionnaire
+                id={3}
                 questions={questions3}
                 radarData={radarData}
+                setRadarData={setRadarData}
                 radarOptions={radarOptions}
+                handleQuestionnaireFinished={handleQuestionnaireFinished}
+                finished={questionnairesFinished[3]}
+                allFinished={allFinished}
               />
             </Route>
             <Route exact path="/fortunes/4">
               <Questionnaire
+                id={4}
                 questions={questions4}
                 radarData={radarData}
+                setRadarData={setRadarData}
                 radarOptions={radarOptions}
+                handleQuestionnaireFinished={handleQuestionnaireFinished}
+                finished={questionnairesFinished[4]}
+                allFinished={allFinished}
               />
             </Route>
             <Route exact path="/fortunes/5">
               <Questionnaire
+                id={5}
                 questions={questions5}
                 radarData={radarData}
+                setRadarData={setRadarData}
                 radarOptions={radarOptions}
+                handleQuestionnaireFinished={handleQuestionnaireFinished}
+                finished={questionnairesFinished[5]}
+                allFinished={allFinished}
               />
             </Route>
 

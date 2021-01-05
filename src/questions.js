@@ -54,6 +54,7 @@ export const questions2 = [
 // these are the questions that are asked in this order
 export const questions3 = [
   {
+    id: 3,
     childPage: child,
     questionText: "This is Question 1x",
     questionOptions: [

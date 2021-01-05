@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Radar } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 
-import { HeroBtn3 } from "../Hero/HeroElements";
+import { HeroBtn, HeroContainer, HeroContent, HeroItems, HeroP } from "../Hero/HeroElements";
 
 const Questionnaire = ({
+  id,
   questions,
-  setQValues,
   setRadarData,
   radarData,
   radarOptions,
+  handleQuestionnaireFinished,
+  finished,
+  allFinished,
 }) => {
   const [count, setCount] = useState(0);
 
@@ -22,35 +25,47 @@ const Questionnaire = ({
     const dataCopy = Object.assign({}, radarData);
     dataCopy.datasets[1].data = sum;
     setRadarData(dataCopy);
+
+    if (count === questions.length - 1) {
+      handleQuestionnaireFinished(id);
+    }
   };
 
   // html for asking questions
   const question = (
-    <div>
-      {questions[count]?.childPage && questions[count]?.childPage()}
-      <p>{questions[count]?.questionText}</p>
+    <>
+      <div style={{ padding: 20 }}>
+        {questions[count]?.childPage && questions[count]?.childPage()}
+      </div>
+      <HeroP>{questions[count]?.questionText}</HeroP>
       {questions[count]?.questionOptions.map((option, index) => (
-        <span key={index}>
-          <button onClick={() => handleChange(option)}>{option.text}</button>
+        <span key={index} style={{ paddingRight: 15 }}>
+          <HeroBtn onClick={() => handleChange(option)}>{option.text}</HeroBtn>
         </span>
       ))}
-    </div>
+    </>
   );
-  const finished = (
+  const end = (
     <>
-      <p>Finished</p>
-      <Link to="/">
-        <HeroBtn3>Go back</HeroBtn3>
+      <div style={{ padding: 20 }}>Finished</div>
+      <Radar data={radarData} options={radarOptions} />
+
+      <Link to={allFinished ? "/fortunes" : "/"}>
+        <HeroBtn>Go back</HeroBtn>
       </Link>
     </>
   );
   return (
     <>
-      <div></div>
-      {/* if current question is smaller than question array length 
+      <HeroContainer>
+        <HeroContent>
+          <HeroItems>
+            {/* if current question is smaller than question array length 
         ask question, otherwise show ending text */}
-      {count < questions.length ? question : finished}
-      <Radar data={radarData} options={radarOptions} />
+            {finished ? end : question}
+          </HeroItems>
+        </HeroContent>
+      </HeroContainer>
     </>
   );
 };
