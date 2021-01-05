@@ -21,7 +21,7 @@ export const questions1 = [
     ],
   },
   {
-    questionText: "This is Question 2",
+    questionText: "This is Question 2x",
     questionOptions: [
       { text: "agree", value: [10, -5, 3, 2, -2] },
       { text: "neutral", value: [0, 0, 0, 0, 0] },
