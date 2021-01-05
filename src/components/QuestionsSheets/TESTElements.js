@@ -23,7 +23,7 @@ export const EndBtn = styled.button`
   font-size: 1.4rem;
   padding: 1rem 4rem;
   border: none;
-  justify-content: page-end;
+  justify-content: flex-end;
   background: #e31837;
   color: #fff;
   transition: 2s, ease-out;
