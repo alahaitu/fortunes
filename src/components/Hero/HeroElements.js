@@ -4,14 +4,14 @@ import { BoXed, Fades } from "../styled";
 
 export const HeroContainer = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url(https://cdn.glitch.com/3659fd71-4929-4f34-9a94-36fdee8ce3d6%2Fheart-1.jpg?v=1606155671445);
+    url(heart-1.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
 `;
 export const HeroContainer1 = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0.01)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2Fheart-2.jpg?v=1607553624388);
+    url(heart-2.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -22,7 +22,7 @@ export const HeroContainer2 = styled.div`
       rgba(255, 255, 255, 0.03),
       rgba(255, 255, 255, 0.01)
     ),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2Fshake-1.jpg?v=1607553626719);
+    url(shake-1.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;

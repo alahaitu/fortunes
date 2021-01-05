@@ -9,16 +9,21 @@ import { questions1, questions2, questions3, questions4, questions5 } from "./qu
 
 // PAGES
 function App() {
-  const [questionnairesFinished, setQuestionnairesFinished] = useState({
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-  });
+  const [questionnairesFinished, setQuestionnairesFinished] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
   const [allFinished, setAllFinished] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    const finishedCount = questionnairesFinished.filter(Boolean).length;
+    const percentage = (finishedCount / questionnairesFinished.length) * 100;
+    setProgress(percentage);
+
     if (
       questionnairesFinished[1] &&
       questionnairesFinished[2] &&
@@ -77,10 +82,9 @@ function App() {
   };
 
   const handleQuestionnaireFinished = (id) => {
-    const obj = {};
-    obj[id] = true;
-    setQuestionnairesFinished({ ...questionnairesFinished, ...obj });
-    console.log(obj);
+    const result = [...questionnairesFinished];
+    result[id - 1] = true;
+    setQuestionnairesFinished(result);
   };
 
   return (
@@ -102,7 +106,7 @@ function App() {
                 radarData={radarData}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
-                finished={questionnairesFinished[1]}
+                finished={questionnairesFinished[0]}
                 allFinished={allFinished}
               />
             </Route>
@@ -114,7 +118,7 @@ function App() {
                 setRadarData={setRadarData}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
-                finished={questionnairesFinished[2]}
+                finished={questionnairesFinished[1]}
                 allFinished={allFinished}
               />
             </Route>
@@ -126,7 +130,7 @@ function App() {
                 setRadarData={setRadarData}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
-                finished={questionnairesFinished[3]}
+                finished={questionnairesFinished[2]}
                 allFinished={allFinished}
               />
             </Route>
@@ -138,7 +142,7 @@ function App() {
                 setRadarData={setRadarData}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
-                finished={questionnairesFinished[4]}
+                finished={questionnairesFinished[3]}
                 allFinished={allFinished}
               />
             </Route>
@@ -150,7 +154,7 @@ function App() {
                 setRadarData={setRadarData}
                 radarOptions={radarOptions}
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
-                finished={questionnairesFinished[5]}
+                finished={questionnairesFinished[4]}
                 allFinished={allFinished}
               />
             </Route>

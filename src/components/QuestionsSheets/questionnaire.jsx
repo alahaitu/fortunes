@@ -3,6 +3,8 @@ import { Radar } from "react-chartjs-2";
 import { Link } from "react-router-dom";
 
 import { HeroBtn, HeroContainer, HeroContent, HeroItems, HeroP } from "../Hero/HeroElements";
+import Navbar from "../Navbar";
+import Sidebar from "../Sidebar";
 
 const Questionnaire = ({
   id,
@@ -15,6 +17,10 @@ const Questionnaire = ({
   allFinished,
 }) => {
   const [count, setCount] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   // run when the user presses submit button
   const handleChange = (event) => {
@@ -58,6 +64,13 @@ const Questionnaire = ({
   return (
     <>
       <HeroContainer>
+        <Navbar toggle={toggle} />
+        <Sidebar
+          isOpen={isOpen}
+          toggle={toggle}
+          radarData={radarData}
+          radarOptions={radarOptions}
+        />
         <HeroContent>
           <HeroItems>
             {/* if current question is smaller than question array length 

@@ -1,12 +1,13 @@
-import styled, { css, keyframes } from "styled-components";
-import { Fades, Fadex, Moonhover, BoXed, FadeIn, FadeBF } from "../styled";
+import styled from "styled-components";
+
+import { BoXed, Fades } from "../styled";
 
 //background images
 export const FContainerS = styled.div`
   //badhandling
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2Fbadhandling.jpg?v=1608470733164);
+    url(badhandling.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -15,7 +16,7 @@ export const FContainerS2 = styled.div`
   //bodyisyourtemple
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2Fbodyisyourtemple.jpg?v=1608470740502);
+    url(bodyisyourtemple.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -28,7 +29,7 @@ export const FContainerS3 = styled.div`
       rgba(255, 200, 200, 0.8),
       rgba(255, 255, 255, 0.01)
     ),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2Fshake-1.jpg?v=1607553626719);
+    url(shake-1.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -37,7 +38,7 @@ export const FContainer = styled.div`
   //HEART-1
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url(https://cdn.glitch.com/3659fd71-4929-4f34-9a94-36fdee8ce3d6%2Fheart-1.jpg?v=1606155671445);
+    url(https://cdn.glitch.com/3659fd71-4929-4f34-9a94-36fdee8ce3d6%2Fheart-1.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -46,7 +47,7 @@ export const FContainer1 = styled.div`
   // heart-2
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0.01)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2Fheart-2.jpg?v=1607553624388);
+    url(heart-2.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -55,7 +56,7 @@ export const FContainer2 = styled.div`
   //FH_4LR
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0.01)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2FFH_4LR.jpg?v=1608470672028);
+    url(FH_4LR.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -64,7 +65,7 @@ export const FContainer3 = styled.div`
   //FH_5LR
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2FFH_5LR.jpg?v=1608470743794);
+    url(FH_5LR.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -73,7 +74,7 @@ export const FContainer4 = styled.div`
   //FH_6LR
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2FFH_6LR.jpg?v=1608470748329);
+    url(FH_6LR.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -86,7 +87,7 @@ export const FContainer5 = styled.div`
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 200, 0.1)
     ),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2FFH_9LR.jpg?v=1608470764604);
+    url(FH_9LR.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -99,7 +100,7 @@ export const FContainer6 = styled.div`
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 200, 0.1)
     ),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2FFH_LR12.jpg?v=1608470767242);
+    url(FH_LR12.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -108,7 +109,7 @@ export const FContainer7 = styled.div`
   //FH_13LR
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2FFH_LR13.jpg?v=1608470794397);
+    url(FH_LR13.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -118,7 +119,7 @@ export const FContainer8 = styled.div`
   background: black;
   animation: ${Fades} 0.8s ease-in;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.01), rgba(0, 0, 0.01)),
-    url(https://cdn.glitch.com/fd5d835e-cc49-4284-bc29-e8b6f5bb3324%2FFH_LR14.jpg?v=1608470810735);
+    url(FH_LR14.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -210,4 +211,3 @@ export const StillScrolling1 = styled.div`
   background-size: cover;
   height: 350vh;
 `;
-
