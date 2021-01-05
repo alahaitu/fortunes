@@ -12,6 +12,14 @@ const EndofLine = ({ radarData, radarOptions }) => {
     setIsOpen(!isOpen);
   };
 
+  const getAverage = (radarData, index) => {
+    let value;
+    // const values = radarData.datasets.map()
+    return value;
+  };
+
+  const loveValue = getAverage(radarData, 1);
+
   return (
     <StillScrolling1>
       <EndofLove value={20} />

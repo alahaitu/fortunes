@@ -9,7 +9,7 @@ const FinishedPage = ({ radarData, radarOptions }) => {
   return (
     <>
       <GlobalStyle />
-      <EndofLine />
+      <EndofLine radarData={radarData} />
     </>
   );
 };

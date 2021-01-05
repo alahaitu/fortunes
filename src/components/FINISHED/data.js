@@ -41,12 +41,6 @@ export const loveAnswers = [
   { title: "title3", text: "text3" },
 ];
 
-export const fucksGivenAnswers = [
-  { title: "title1", text: "text1" },
-  { title: "title2", text: "text2" },
-  { title: "title3", text: "text3" },
-];
-
 /* const LovingAnswers = (props) => {
     
 //make a state that if this questionnaire is finished it enables the related answersheet
