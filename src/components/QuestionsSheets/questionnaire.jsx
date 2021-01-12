@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import Chart from "../Fortunes";
 import { HeroBtn, HeroContainer, HeroContent, HeroH1, HeroItems, HeroP } from "../Hero/HeroElements";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
@@ -66,6 +67,8 @@ const Questionnaire = ({
     end = (
       <>
         <div style={{ padding: 20 }}>Finished</div>
+        <Chart radarData={data} radarOptions={radarOptions} />
+
         <Link to={"/"}>
           <HeroBtn>Go back</HeroBtn>
         </Link>

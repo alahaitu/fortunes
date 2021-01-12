@@ -5,11 +5,11 @@ import { GlobalStyle } from "../globalStyles";
 
 // PAGES
 
-const FinishedPage = ({ radarData, radarOptions }) => {
+const FinishedPage = ({ radarData, radarOptions, allFinished }) => {
   return (
     <>
       <GlobalStyle />
-      <EndofLine radarData={radarData} />
+      <EndofLine radarData={radarData} allFinished={allFinished} />
     </>
   );
 };

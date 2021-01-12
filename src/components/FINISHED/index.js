@@ -13,6 +13,8 @@ const EndofLine = ({ radarData, radarOptions, allFinished }) => {
     setIsOpen(!isOpen);
   };
   const labels = ["Health", "Wealth", "Family", "Love", "Fucks given"];
+  console.log(radarData);
+  console.log(allFinished);
 
   /*const radarData = {
     labels,

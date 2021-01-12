@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-// import Fortunes from "./parentComponents";
+
 import Radari from "./FunChart";
+
+// import Fortunes from "./parentComponents";
 //GRANDCHILD
 const Chart = ({ radarData, radarOptions }) => {
- 
-  
-
-  
-
+  console.log(radarData);
   return (
     <>
       <div>
