@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { getAnswers, loveAnswers } from "./data";
-import { FBtn, FContainer5, FContent, FH1, FItems, FP } from "./FinishedElements";
+import { FBtn, FContainerS, FContent, FH1, FItems, FP } from "./FinishedElements";
 
 const EndofLove = ({ radarData, radarOptions, value }) => {
   const answer = getAnswers(value, loveAnswers);
@@ -11,7 +11,7 @@ const EndofLove = ({ radarData, radarOptions, value }) => {
   return (
     <>
       <Jello duration="1.0s" delay="0.4s">
-        <FContainer5>
+        <FContainerS>
           <FContent>
             <Jello duration="1.0s" delay="0.6s">
               <FItems>
@@ -27,7 +27,7 @@ const EndofLove = ({ radarData, radarOptions, value }) => {
               </FItems>
             </Jello>
           </FContent>
-        </FContainer5>
+        </FContainerS>
       </Jello>
     </>
   );
