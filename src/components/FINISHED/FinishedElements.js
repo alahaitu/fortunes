@@ -7,7 +7,7 @@ export const FContainerS = styled.div`
   //badhandling
   animation: ${Fades} 0.8s ease-in;
   background:linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0.1)),
-    url($(props=> props.imgName));
+    url(${props=> props.imgName});
   height: 100vh;
   background-position: center;
   background-size: cover;
