@@ -3,7 +3,7 @@ export const getAnswers = (value, answers) => {
 
   if (value < 30) {
     answer = answers[0];
-  } else if (value > 60) {
+  } else if (value >= 60) {
     answer = answers[1];
   } else {
     answer = answers[2];
