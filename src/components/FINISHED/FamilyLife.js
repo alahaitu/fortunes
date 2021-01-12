@@ -17,7 +17,7 @@ const EndofFAMILY = ({ radarData, radarOptions, value }) => {
     <>
       <Jello duration="1.0s" delay="0.2s">
         {/* Pass img name to container as answer.imgName */}
-        <FContainerS>
+        <FContainerS imgName={answer.imgName}>
           <FContent>
             <Jello duration="1.0s" delay="0.4s">
               <FItems>
