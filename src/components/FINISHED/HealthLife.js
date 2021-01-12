@@ -17,7 +17,7 @@ const EndofHealth = ({ radarData, radarOptions, value }) => {
   return (
     <>
       <Jello duration="1.0s" delay="0.2s">
-        <FContainer6>
+        <FContainerS>
           <FContent>
             <Jello duration="1.0s" delay="0.4s">
               <FItems>
@@ -33,7 +33,7 @@ const EndofHealth = ({ radarData, radarOptions, value }) => {
               </FItems>
             </Jello>
           </FContent>
-        </FContainer6>
+        </FContainerS>
       </Jello>
     </>
   );
