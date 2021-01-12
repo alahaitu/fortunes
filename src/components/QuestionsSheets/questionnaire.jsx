@@ -58,6 +58,8 @@ const Questionnaire = ({
     end = (
       <>
         <div style={{ padding: 20 }}>Finished</div>
+        <Chart radarData={data} radarOptions={radarOptions} />
+
         <Link to={"/finished"}>
           <HeroBtn>End presence</HeroBtn>
         </Link>
