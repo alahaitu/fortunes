@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { familyAnswers, getAnswers } from "./data";
-import { FBtn, FContainer8, FContent, FH1, FItems, FP } from "./FinishedElements";
+import { FBtn, FContainerS, FContent, FH1, FItems, FP } from "./FinishedElements";
 
 const EndofFAMILY = ({ radarData, radarOptions, value }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ const EndofFAMILY = ({ radarData, radarOptions, value }) => {
     <>
       <Jello duration="1.0s" delay="0.2s">
         {/* Pass img name to container as answer.imgName */}
-        <FContainer8>
+        <FContainerS imgName={answer.imgName}>
           <FContent>
             <Jello duration="1.0s" delay="0.4s">
               <FItems>
@@ -33,7 +33,7 @@ const EndofFAMILY = ({ radarData, radarOptions, value }) => {
               </FItems>
             </Jello>
           </FContent>
-        </FContainer8>
+        </FContainerS>
       </Jello>
     </>
   );

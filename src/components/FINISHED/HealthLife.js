@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { getAnswers, healthAnswers } from "./data";
-import { FBtn, FContainer6, FContent, FH1, FItems, FP } from "./FinishedElements";
+import { FBtn, FContainerS, FContent, FH1, FItems, FP } from "./FinishedElements";
 
 const EndofHealth = ({ radarData, radarOptions, value }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ const EndofHealth = ({ radarData, radarOptions, value }) => {
   return (
     <>
       <Jello duration="1.0s" delay="0.2s">
-        <FContainer6>
+        <FContainerS imgName={answer.imgName}>
           <FContent>
             <Jello duration="1.0s" delay="0.4s">
               <FItems>
@@ -33,7 +33,7 @@ const EndofHealth = ({ radarData, radarOptions, value }) => {
               </FItems>
             </Jello>
           </FContent>
-        </FContainer6>
+        </FContainerS>
       </Jello>
     </>
   );
