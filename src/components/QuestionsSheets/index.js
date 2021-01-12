@@ -14,10 +14,11 @@ const Hellings = ({ radarData, radarOptions, progress }) => {
 
   return (
     <StillScrolling>
-      <Link to="/finished">
+      
+      <HeroContainer1>
+    <Link to="/finished">
         <EndBtn>end presence</EndBtn>
       </Link>
-      <HeroContainer1>
         <Navbar toggle={toggle} />
         <Sidebar
           isOpen={isOpen}
