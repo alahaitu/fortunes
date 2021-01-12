@@ -12,33 +12,35 @@ export const getAnswers = (value, answers) => {
 };
 
 export const healthAnswers = [
-  { title: "title1", text: "text1" },
-  { title: "title2", text: "text2" },
-  { title: "title3", text: "text3" },
+  { title: "title1", text: "text1", imgName: "FH_LR13.jpg" },
+  { title: "title2", text: "text2", imgName: "FH_LR13.jpg" },
+  { title: "title3", text: "text3", imgName: "FH_LR13.jpg" },
 ];
 
 export const wealthAnswers = [
-  { title: "title1", text: "text1" },
-  { title: "title2", text: "text2" },
-  { title: "title3", text: "text3" },
+  { title: "title1", text: "text1", imgName: "FH_LR13.jpg" },
+  { title: "title2", text: "text2", imgName: "FH_LR13.jpg" },
+  { title: "title3", text: "text3", imgName: "FH_LR13.jpg" },
 ];
 
 export const familyAnswers = [
-  { title: "title1", text: "text1" },
-  { title: "title2", text: "text2" },
-  { title: "title3", text: "text3" },
+  { title: "title1", text: "text1", imgName: "FH_LR13.jpg" },
+  { title: "title2", text: "text2", imgName: "FH_LR13.jpg" },
+  { title: "title3", text: "text3", imgName: "FH_LR13.jpg" },
 ];
 
 export const loveAnswers = [
   {
     title: "Unclear",
     text: "You are the true master with tactics that leads in Panic",
+    imgName: "FH_LR13.jpg",
   },
   {
     title: "Off with balance",
     text: "You are the true master with tactics that leads in Panic",
+    imgName: "FH_LR13.jpg",
   },
-  { title: "title3", text: "text3" },
+  { title: "title3", text: "text3", imgName: "FH_LR13.jpg" },
 ];
 
 /* const LovingAnswers = (props) => {

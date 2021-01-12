@@ -2,13 +2,17 @@ import { Jello } from "animate-css-styled-components";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { getAnswers, healthAnswers } from "./data";
 import { FBtn, FContainer6, FContent, FH1, FItems, FP } from "./FinishedElements";
 
-const EndofHealth = ({ radarData, radarOptions }) => {
+const EndofHealth = ({ radarData, radarOptions, value }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const answer = getAnswers(value, healthAnswers);
+
   //All things related to nail health and hand-therapy
   return (
     <>
@@ -18,8 +22,8 @@ const EndofHealth = ({ radarData, radarOptions }) => {
             <Jello duration="1.0s" delay="0.4s">
               <FItems>
                 <FH1>
-                  Here render Health data.title from data.js
-                  <FP>Here render Health data.text from data.js</FP>
+                  {answer.title}
+                  <FP>{answer.text}</FP>
                   <Link to="/fortunes">
                     <Jello duration="1.0s" delay="0.8s">
                       <FBtn>Health</FBtn>

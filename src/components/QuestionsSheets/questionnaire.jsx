@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { HeroBtn, HeroContainer, HeroContent, HeroItems, HeroP } from "../Hero/HeroElements";
+import { HeroBtn, HeroContainer, HeroContent, HeroH1, HeroItems, HeroP } from "../Hero/HeroElements";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 
@@ -14,6 +14,7 @@ const Questionnaire = ({
   handleQuestionnaireFinished,
   finished,
   allFinished,
+  progress,
 }) => {
   const [count, setCount] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,6 @@ const Questionnaire = ({
 
   const labels = ["Health", "Wealth", "Family", "Love", "Fucks given"];
   const data = { labels, datasets: [radarData] };
-  const [progress, setProgress] = useState(0);
 
   // run when the user presses submit button
   const handleChange = (event) => {
@@ -32,7 +32,6 @@ const Questionnaire = ({
     const dataCopy = Object.assign({}, radarData);
     dataCopy.data = sum;
     setRadarData(dataCopy);
-    setProgress((count + 1 / questions.length) * 100);
 
     if (count === questions.length - 1) {
       handleQuestionnaireFinished(id);
@@ -53,14 +52,27 @@ const Questionnaire = ({
       ))}
     </>
   );
-  const end = (
-    <>
-      <div style={{ padding: 20 }}>Finished</div>
-      <Link to={allFinished ? "/fortunes" : "/"}>
-        <HeroBtn>Go back</HeroBtn>
-      </Link>
-    </>
-  );
+  let end;
+  if (allFinished) {
+    end = (
+      <>
+        <div style={{ padding: 20 }}>Finished</div>
+        <Link to={"/finished"}>
+          <HeroBtn>End presence</HeroBtn>
+        </Link>
+      </>
+    );
+  } else {
+    end = (
+      <>
+        <div style={{ padding: 20 }}>Finished</div>
+        <Link to={"/"}>
+          <HeroBtn>Go back</HeroBtn>
+        </Link>
+      </>
+    );
+  }
+
   return (
     <>
       <HeroContainer>
@@ -73,11 +85,13 @@ const Questionnaire = ({
           progress={progress}
         />
         <HeroContent>
-          <HeroItems>
-            {/* if current question is smaller than question array length 
+          <HeroH1>
+            <HeroItems>
+              {/* if current question is smaller than question array length 
         ask question, otherwise show ending text */}
-            {finished ? end : question}
-          </HeroItems>
+              {finished ? end : question}
+            </HeroItems>
+          </HeroH1>
         </HeroContent>
       </HeroContainer>
     </>

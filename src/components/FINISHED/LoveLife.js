@@ -6,6 +6,8 @@ import { getAnswers, loveAnswers } from "./data";
 import { FBtn, FContainer5, FContent, FH1, FItems, FP } from "./FinishedElements";
 
 const EndofLove = ({ radarData, radarOptions, value }) => {
+  const answer = getAnswers(value, loveAnswers);
+
   return (
     <>
       <Jello duration="1.0s" delay="0.4s">
@@ -14,8 +16,8 @@ const EndofLove = ({ radarData, radarOptions, value }) => {
             <Jello duration="1.0s" delay="0.6s">
               <FItems>
                 <FH1 delay="1s">
-                  {getAnswers(value, loveAnswers).title}
-                  <FP>{getAnswers(value, loveAnswers).text}</FP>
+                  {answer.title}
+                  <FP>{answer.text}</FP>
                   <Link to="/fortunes">
                     <Jello duration="1.0s" delay="1s">
                       <FBtn>LOVE</FBtn>

@@ -127,6 +127,7 @@ function App() {
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[0]}
                 allFinished={allFinished}
+                progress={progress}
               />
             </Route>
             <Route exact path="/fortunes/2">
@@ -139,6 +140,7 @@ function App() {
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[1]}
                 allFinished={allFinished}
+                progress={progress}
               />
             </Route>
             <Route exact path="/fortunes/3">
@@ -151,6 +153,7 @@ function App() {
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[2]}
                 allFinished={allFinished}
+                progress={progress}
               />
             </Route>
             <Route exact path="/fortunes/4">
@@ -163,6 +166,7 @@ function App() {
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[3]}
                 allFinished={allFinished}
+                progress={progress}
               />
             </Route>
             <Route exact path="/fortunes/5">
@@ -175,11 +179,16 @@ function App() {
                 handleQuestionnaireFinished={handleQuestionnaireFinished}
                 finished={questionnairesFinished[4]}
                 allFinished={allFinished}
+                progress={progress}
               />
             </Route>
 
             <Route exact path="/finished">
-              <FinishedPage radarData={radarData} radarOptions={radarOptions} />
+              <FinishedPage
+                radarData={radarData}
+                radarOptions={radarOptions}
+                allFinished={allFinished}
+              />
             </Route>
           </Switch>
         </Router>
