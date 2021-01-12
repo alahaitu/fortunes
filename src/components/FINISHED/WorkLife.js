@@ -16,7 +16,7 @@ const EndofWORK = ({ radarData, radarOptions, value }) => {
   return (
     <>
       <Jello duration="1.0s" delay="0.2s">
-        <FContainerS>
+        <FContainerS imgName={answer.imgName}>
           <FContent>
             <Jello duration="1.0s" delay="0.8s">
               <FItems>
