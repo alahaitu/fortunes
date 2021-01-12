@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { getAnswers, healthAnswers } from "./data";
-import { FBtn, FContainer6, FContent, FH1, FItems, FP } from "./FinishedElements";
+import { FBtn, FContainerS, FContent, FH1, FItems, FP } from "./FinishedElements";
 
 const EndofHealth = ({ radarData, radarOptions, value }) => {
   const [isOpen, setIsOpen] = useState(false);
