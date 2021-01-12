@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { familyAnswers, getAnswers } from "./data";
-import { FBtn, FContainer8, FContent, FH1, FItems, FP } from "./FinishedElements";
+import { FBtn, FContainerS, FContent, FH1, FItems, FP } from "./FinishedElements";
 
 const EndofFAMILY = ({ radarData, radarOptions, value }) => {
   const [isOpen, setIsOpen] = useState(false);
